@@ -7,10 +7,10 @@
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone -b main https://github.com/claudiomecenas/setup-docker-laravel-11-BR.git app-laravel
+git clone -b main https://github.com/claudiomecenas/TDD-Laravel.git TDD-Laravel
 ```
 ```sh
-cd app-laravel
+cd TDD-Laravel
 ```
 
 Crie o Arquivo .env
