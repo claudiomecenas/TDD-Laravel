@@ -47,9 +47,31 @@ class UserTest extends TestCase
         $this->assertEquals($expectedFillable, $fillable); // getFillable permite retornar um array com as colunas fillable
     }
 
+    public function test_hidden(): void
+    {
+        $hidden = $this->model()->getHidden();
+        $expectedHidden = [
+            'password',
+            'remember_token',
+        ];
+        $this->assertEquals($expectedHidden, $hidden);
+    }
+
     public function test_incrementing_is_false(): void
     {
         $incrementing = $this->model()->incrementing;
         $this->assertFalse($incrementing);
+    }
+
+    public function test_has_casts(): void
+    {
+        $casts = $this->model()->getCasts();
+        $expectedCasts = [
+            'id' => 'string',
+            'email_verified_at' => 'datetime',
+            //'deleted_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+        $this->assertEquals($expectedCasts, $casts);
     }
 }
