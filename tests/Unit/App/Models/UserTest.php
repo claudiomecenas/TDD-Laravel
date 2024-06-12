@@ -46,4 +46,10 @@ class UserTest extends TestCase
         
         $this->assertEquals($expectedFillable, $fillable); // getFillable permite retornar um array com as colunas fillable
     }
+
+    public function test_incrementing_is_false(): void
+    {
+        $incrementing = $this->model()->incrementing;
+        $this->assertFalse($incrementing);
+    }
 }
